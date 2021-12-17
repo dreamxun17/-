@@ -4,7 +4,21 @@
 #include <conio.h>
 #include <math.h>
 #include <assert.h>
+#include <limits.h>
+#include <float.h>
 
+
+
+int main(void)
+{
+	int n = 9;
+	float* p = (float*) &n;
+	printf("%d\n", n); //9
+	printf("%d\n", *p);// 0
+	printf("p==%p\n", p); //p == 006FF794
+	printf("n==%p\n", &n);//n == 006FF794
+	return 0;
+}
 //int main(void)
 //{
 //	char c = -128;
