@@ -7,18 +7,131 @@
 #include <limits.h>
 #include <float.h>
 
+//double mypow( const int k, int n)
+//{
+//	if (n < 0)
+//	{
+//		return mypow(k,-n);
+//	}
+//	else if (n > 0)
+//	{
+//		return k * mypow(k, n-1);
+//	}
+//	else if (!n)
+//	{
+//		return 1;
+//	}
+//	
+//}
+//
+//
+//int main(void)
+//{
+//	int k = 0;
+//	int n = 0;
+//	if (scanf("%d^%d", &k, &n) == 2)//判断输入是不是两个整数
+//	{
+//		int a = mypow(k, n);
+//		printf("%d\n", a);
+//	}
+//		
+//	else
+//	{
+//		printf("输入错误");
+//		while (getchar() != '\n')//否则清空缓冲区
+//			continue;
+//	}
+//		
+//
+//}
 
+//void test(int (*p)[5])
+//{
+//	printf("%d\n", **p);
+//}
+//
+//int main(void)
+//{
+//	int arr[3][4] = { 0 };
+//	test(arr);
+//	return 0;
+//}
+//void print(int (*p)[5])
+//{
+//	int i = 0;
+//	for (i = 0; i < 3; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j < 5; j++)
+//		{
+//			printf("%d", *(p[i] + j));
+//		}
+//		printf("\n");
+//	}
+//
+//}
+//
+//int main(void)
+//{
+//	int arr[3][5] = { {1,2,3,4,5},{2,3,4,5,6},{3,4,5,6,7} };
+//	print(arr);
+//	return 0;
+//}
+//int main(void)
+//{
+//	int arr1[] = { 1,2,3,4,5 };
+//	int arr2[] = { 2,3,4,5,6 };
+//	int arr3[] = { 3,4,5,6,7 };
+//	int* parr[] = { arr1,arr2,arr3 };
+//	数组指针
+//	int(*p)[] = &arr1;
+//	printf("%d\n", *(*p+2));
+	//for (int i = 0; i < 3; i++)
+	//{
+	//	int j = 0;
+	//	for (j = 0; j < 5; j++)
+	//	{
+	//		printf("%d ", *( *(parr + i) + j ));
+	//	}
+	//	printf("\n");
+	//}
+	//return 0;
 
-int main(void)
-{
-	int n = 9;
-	float* p = (float*) &n;
-	printf("%d\n", n); //9
-	printf("%d\n", *p);// 0
-	printf("p==%p\n", p); //p == 006FF794
-	printf("n==%p\n", &n);//n == 006FF794
-	return 0;
-}
+//int main(void)
+//{
+//	char* p1 = "abcde";
+//	char* p2 = "abcde";
+//	printf("%p\n", p1);
+//	printf("%p\n", p2);
+//	return 0;
+//}
+//int main(void)
+//{
+//	int i = 0, j = 0, k = 2, m = 0;
+//	if (m = j++ && i++ || k++)
+//		printf("1\n");
+//	return 0;
+//}
+//int main(void)
+//{
+//	int arr[] = { 0,1,2,3,4 };
+//	int p[] = arr;
+//	printf("%d", *p);
+//	return 0;
+//}
+
+////浮点数和整数的区别
+//int main(void)
+//{
+//	int n = 9;
+//	float* p = (float*) &n;
+//	printf("%d\n", n); 
+//	printf("%f\n", *p);  
+//	printf("%f\n", n);
+//	printf("p==%p\n", p); //p == 006FF794
+//	printf("n==%p\n", &n);//n == 006FF794
+//	return 0;
+//}
 //int main(void)
 //{
 //	char c = -128;
