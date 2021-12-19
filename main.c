@@ -7,6 +7,18 @@
 #include <limits.h>
 #include <float.h>
 
+
+
+
+
+
+int main(vopid)
+{
+	int arr[] = { 1,2,3,4,5,6,7 };
+	qsort();
+	return 0;
+}
+
 //double mypow( const int k, int n)
 //{
 //	if (n < 0)
