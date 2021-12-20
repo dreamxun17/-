@@ -10,14 +10,55 @@
 
 
 
+//typedef struct stu
+//{
+//    char Name[10];
+//    char Sex[5];
+//    short Age;
+//}stu;
+//
+//int cmp_stu(void* e1,void* e2)
+//{
+//    return ((stu*)e1)->Age - ((stu*)e2) -> Age;
+//}
+////使用qsort函数
+//int main(void)
+//{
+//    stu a={"李白","男",18};
+//    stu b={"李清照","女",19};
+//    stu c = {"杜甫", "男", 17};
+//    stu* a1=&a;
+//    stu* b1=&b;
+//    stu* c1=&c;
+//    stu*p[]={a1,b1,c1};
+//    //stu* = p;
+//    qsort(p,sizeof(p)/sizeof(p[1]),sizeof(p[1]),cmp_stu);
+//    for(int i=0;i<3;i++)
+//    {
+//        printf("%p\n",p[i]);
+//    }
+//    return 0;
+//}
+//int Add(int x,int y)
+//{
+//    return x+y;
+//}
+//
+//int main()
+//{
+//    int (*pa)(int,int)=Add;
+//    int (*pass[4])(int,int)={pa};
+//    int ret=(*pass)(3,4);
+//    printf("%d",ret);
+//    return 0;
+//}
 
-
-int main(vopid)
-{
-	int arr[] = { 1,2,3,4,5,6,7 };
-	qsort();
-	return 0;
-}
+//int main(vopid)
+//{
+//	int arr[] = { 1,2,3,4,5,6,7 };
+//	qsort();
+//	return 0;
+//}
 
 //double mypow( const int k, int n)
 //{
