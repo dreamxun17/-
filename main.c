@@ -1,10 +1,638 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include <stdio.h>
-#include <stdlib.h>
-#include <conio.h>
-#include <math.h>
-#include <assert.h>
 
+
+
+
+
+
+
+//杨辉三角
+//int main(void)
+//{
+//	int arr[10][10] = { 0 };
+//	int i = 0;
+//	for (i = 0; i < 10; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j < 10; j++)
+//		{
+//			if (j == 0)
+//				arr[i][j] = 1;
+//			if (i == j)
+//				arr[i][j] = 1;
+//			if(i>1 && j<i)
+//				arr[i][j + 1] = arr[i - 1][j] + arr[i - 1][j + 1];
+//			
+//		}
+//	}
+//	
+	/*for (i = 0; i < 10; i++)
+	{
+		int j = 0;
+		for (j = 0; j < i; j++)
+		{
+			if (i > 1)
+			{
+				arr[i][j + 1] = arr[i - 1][j] + arr[i - 1][j + 1];
+			}
+
+		}
+	}*/
+
+	for (i = 0; i < 10; i++)
+	{
+		int j = 0;
+		for (j = 0; j <= i; j++)
+		{
+			printf("%d ", arr[i][j]);
+		}
+		printf("\n");
+	}
+	return 0;
+}
+
+//void sc(int* p,int sz)
+//{
+//    int i=0;
+//    _Bool ret=true;
+//    for(i=0;i<sz-1;i++)
+//    {
+//        int j=0;
+//        for(j=0;j<sz-i-1;j++)
+//        {
+//            if((*(p+j))%2==0)
+//            {
+//                int tmp=*(p+j);
+//                *(p+j)=*(p+j+1);
+//                *(p+j+1)=tmp;
+//                ret=false;
+//            }
+//        }
+//        if(ret)
+//            break;
+//    }
+//}
+//
+//int main (void)
+//{
+//    int arr[]={1,3,5,7,9};
+//    int sz=sizeof(arr)/sizeof(arr[0]);
+//    sc(arr,sz);
+//    for(int i=0;i<sz;i++)
+//    {
+//        printf("%d ",arr[i]);
+//    }
+//    return 0;
+//}
+
+//int main (void)
+//{
+//    int a=20;
+//    int sum=a;
+//    while(a>=2)
+//    {
+//        sum+=a/2;
+//        a=a/2+a%2;
+//    }
+//    printf("%d\n",sum);
+//    return 0;
+//}
+
+//int main (void)
+//{
+//    int a=10;
+//    char c='*';
+//    int i=0;
+//    int j=0;
+//    int k=0;
+//    for(i=1;i<=a/2*2+1;i++)
+//    {
+//
+//        for (j=0;j<a/2+1;j++)
+//        {
+//            printf(" ");
+//
+//        }
+//
+//        for (k=0;k<a/2-i;k++)
+//        {
+//
+//            printf("%c ",c);
+//        }
+//        printf("\n");
+//
+//    }
+//
+//    return 0;
+//}
+//水仙花数
+//int main (void)
+//{
+//
+//
+//    int i=0;
+//    for(i=0;i<10000;i++)
+//    {
+//        int ret=i;
+//        int count=1;
+//        int sum=0;
+//        while(ret/=10)
+//        {
+//           count++;
+//        }
+//        ret=i;
+//        while(ret)
+//        {
+//            sum+=pow(ret%10,count);
+//            ret/=10;
+//        }
+//        if(i==sum)
+//           printf("%d ",sum);
+//    }
+//
+//    return 0;
+//}
+
+//int mypow(int k,int n)
+//{
+//    int ret=k;
+//    for(int i=1;i<n;i++)
+//    {
+//       ret += k*(int)pow(10,i);
+//    }
+//    return ret;
+//}
+//
+//int rea(int k, int n)
+//{
+//    if(n==1)
+//        return k;
+//    else
+//        return mypow(k,n)+rea(k,n-1);
+//}
+
+//int main (void)
+//{
+//    int k=1;
+//    int n=5;
+//
+//    int ret=0;
+//    int sum=0;
+//    int i=0;
+//    for(i=0;i<n;i++)
+//    {
+//        ret=ret*10+k;
+//        sum+=ret;
+//    }
+//    printf("%d\n",sum);
+//    return 0;
+//}
+
+#include <stdio.h>
+
+//int main(void)
+//{
+//    char* c[] = {"ENTER","NEW","POINT","FiRST"};
+//    char**cp[] = {c+ 3,c + 2,c + 1,c};
+//    char***cpp=cp;
+//    printf("%s\n",**++cpp);
+//    printf("%s\n",*--*++cpp + 3);
+//    printf("%s\n",*cpp[-2]+3);
+//    printf("%s\n",cpp[-1][-1]+1);
+//    return 0;
+//}
+
+
+//void tmp(char* e1,char* e2,int sz)
+//{
+//    for(int i=0;i<sz;i++)
+//    {
+//        char mtp = *e1;
+//        *e1 = *e2;
+//        *e2 = mtp;
+//        e1++;
+//        e2++;
+//    }
+//}
+//
+//void my_qsort(void* ptr,size_t count,size_t width,int (*cmp)(void* e1,void* e2) )
+//{
+//    int i=0;
+//    for ( i = 0; i < count-1;i++)
+//    {
+//        int j=0;
+//        for(j=0;j < count-i-1;j++)
+//        {
+//            if(cmp((char*)ptr + j * width,(char*)ptr + (j+1) * width) > 0)
+//                tmp((char*)ptr + j * width,(char*)ptr + (j+1) * width,width);
+//        }
+//    }
+//}
+
+//int int_cmp(void* e1,void* e2)
+//{
+//    return *(int*)e1 - *(int*)e2;
+//
+//}
+//
+
+//int main(void)
+//{
+//    int arr[]={10,9,8,5,6,7,4,3,2,1,};
+//    size_t sz=sizeof(arr)/sizeof(arr[0]);
+//    my_qsort(arr,sz,sizeof(arr[0]),int_cmp);
+//    int i=0;
+//    for(i=0;i<sz;i++)
+//    {
+//        printf("%d ",arr[i]);
+//    }
+//    return 0;
+//
+//}
+
+//
+//typedef struct stu
+//{
+//    char Name[10];
+//    char Sex[5];
+//    short Age;
+//}stu;
+//
+//int cmp_stu(void* e1,void* e2)
+//{
+//    if(  (**(stu**)e1).Age > (**(stu**)e2).Age)
+//        return 1;
+//    else if((**(stu**)e1).Age == (**(stu**)e2).Age)
+//        return 0;
+//    else
+//        return -1;
+//}
+//使用qsort函数
+//
+//int main(void)
+//{
+//    stu a={"李白","男",18};
+//    stu b={"李清照","女",19};
+//    stu c = {"杜甫", "男", 17};
+//    stu* a1=&a;
+//    stu* b1=&b;
+//    stu* c1=&c;
+//    stu*p[]={a1,b1,c1};
+//    //stu* = p;
+//    qsort(p,sizeof(p)/sizeof(p[0]),sizeof(p[0]),cmp_stu);
+//    for(int i=0;i<3;i++)
+//    {
+//        printf("%d\n",p[i]->Age);
+//    }
+//    return 0;
+//}
+//int Add(int x,int y)
+//{
+//    return x+y;
+//}
+//
+//int main()
+//{
+//    int (*pa)(int,int)=Add;
+//    int (*pass[4])(int,int)={pa};
+//    int ret=(*pass)(3,4);
+//    printf("%d",ret);
+//    return 0;
+//}
+
+//#include <stdio.h>
+//#include <string.h>
+//#include <assert.h>
+//#include <math.h>
+//
+//int mypow(int a, int n)
+//{
+//
+//	//int sum = 0;
+//	while (a += pow(10, a), n--)
+//		continue;
+//	return a;
+//}
+//int intsum(int a,int n)
+//{
+//	if (n = 1)
+//		return a;
+//	else
+//		return mypow(a,n)+ intsum(a, n - 1);
+//}
+//int mian(void)
+//{
+//	printf("%d\n", mypow(1,1));
+//	int a = 11;
+//	/nt_sum(a,n);
+//	return 0;
+//}
+
+//逆序字符串
+//void reverse(char* str)
+//{
+//	assert(str);
+//	int len = strlen(str);
+//	char*left = str;
+//	char* right = str + len-1;
+//	while (left < right)
+//	{
+//		char tmp = *left;
+//		*left = *right;
+//		*right = tmp;
+//		left++;
+//		right--;
+//	}
+//}
+
+//递归实现倒叙字符串
+
+//int main(void)
+//{
+//    char* c[] = {"ENTER","NEW","POINT","FiRST"};
+//    char**cp[] = {c+ 3,c + 2,c + 1,c};
+//    char***cpp=cp;
+//    printf("%s\n",**++cpp);
+//    printf("%s\n",*--*++cpp + 3);
+//    printf("%s\n",*cpp[-2]+3);
+//    printf("%s\n",cpp[-1][-1]+1);
+//    return 0;
+//}
+
+
+//void tmp(char* e1,char* e2,int sz)
+//{
+//    for(int i=0;i<sz;i++)
+//    {
+//        char mtp = *e1;
+//        *e1 = *e2;
+//        *e2 = mtp;
+//        e1++;
+//        e2++;
+//    }
+//}
+//
+//void my_qsort(void* ptr,size_t count,size_t width,int (*cmp)(void* e1,void* e2) )
+//{
+//    int i=0;
+//    for ( i = 0; i < count-1;i++)
+//    {
+//        int j=0;
+//        for(j=0;j < count-i-1;j++)
+//        {
+//            if(cmp((char*)ptr + j * width,(char*)ptr + (j+1) * width) > 0)
+//                tmp((char*)ptr + j * width,(char*)ptr + (j+1) * width,width);
+//        }
+//    }
+//}
+
+//int int_cmp(void* e1,void* e2)
+//{
+//    return *(int*)e1 - *(int*)e2;
+//
+//}
+//
+
+//int main(void)
+//{
+//    int arr[]={10,9,8,5,6,7,4,3,2,1,};
+//    size_t sz=sizeof(arr)/sizeof(arr[0]);
+//    my_qsort(arr,sz,sizeof(arr[0]),int_cmp);
+//    int i=0;
+//    for(i=0;i<sz;i++)
+//    {
+//        printf("%d ",arr[i]);
+//    }
+//    return 0;
+//
+//}
+
+//
+//typedef struct stu
+//{
+//    char Name[10];
+//    char Sex[5];
+//    short Age;
+//}stu;
+//
+//int cmp_stu(void* e1,void* e2)
+//{
+//    if(  (**(stu**)e1).Age > (**(stu**)e2).Age)
+//        return 1;
+//    else if((**(stu**)e1).Age == (**(stu**)e2).Age)
+//        return 0;
+//    else
+//        return -1;
+//}
+//使用qsort函数
+//
+//int main(void)
+//{
+//    stu a={"李白","男",18};
+//    stu b={"李清照","女",19};
+//    stu c = {"杜甫", "男", 17};
+//    stu* a1=&a;
+//    stu* b1=&b;
+//    stu* c1=&c;
+//    stu*p[]={a1,b1,c1};
+//    //stu* = p;
+//    qsort(p,sizeof(p)/sizeof(p[0]),sizeof(p[0]),cmp_stu);
+//    for(int i=0;i<3;i++)
+//    {
+//        printf("%d\n",p[i]->Age);
+//    }
+//    return 0;
+//}
+//int Add(int x,int y)
+//{
+//    return x+y;
+//}
+//
+//int main()
+//{
+//    int (*pa)(int,int)=Add;
+//    int (*pass[4])(int,int)={pa};
+//    int ret=(*pass)(3,4);
+//    printf("%d",ret);
+//    return 0;
+//}
+
+//typedef struct stu
+//{
+//    char Name[10];
+//    char Sex[5];
+//    short Age;
+//}stu;
+//
+//int cmp_stu(void* e1,void* e2)
+//{
+//    return ((stu*)e1)->Age - ((stu*)e2) -> Age;
+//}
+////使用qsort函数
+//int main(void)
+//{
+//    stu a={"李白","男",18};
+//    stu b={"李清照","女",19};
+//    stu c = {"杜甫", "男", 17};
+//    stu* a1=&a;
+//    stu* b1=&b;
+//    stu* c1=&c;
+//    stu*p[]={a1,b1,c1};
+//    //stu* = p;
+//    qsort(p,sizeof(p)/sizeof(p[1]),sizeof(p[1]),cmp_stu);
+//    for(int i=0;i<3;i++)
+//    {
+//        printf("%p\n",p[i]);
+//    }
+//    return 0;
+//}
+//int Add(int x,int y)
+//{
+//    return x+y;
+//}
+//
+//int main()
+//{
+//    int (*pa)(int,int)=Add;
+//    int (*pass[4])(int,int)={pa};
+//    int ret=(*pass)(3,4);
+//    printf("%d",ret);
+//    return 0;
+//}
+
+//int main(vopid)
+//{
+//	int arr[] = { 1,2,3,4,5,6,7 };
+//	qsort();
+//	return 0;
+//}
+
+//double mypow( const int k, int n)
+//{
+//	if (n < 0)
+//	{
+//		return mypow(k,-n);
+//	}
+//	else if (n > 0)
+//	{
+//		return k * mypow(k, n-1);
+//	}
+//	else if (!n)
+//	{
+//		return 1;
+//	}
+//
+//}
+//
+//
+//int main(void)
+//{
+//	int k = 0;
+//	int n = 0;
+//	if (scanf("%d^%d", &k, &n) == 2)//判断输入是不是两个整数
+//	{
+//		int a = mypow(k, n);
+//		printf("%d\n", a);
+//	}
+//
+//	else
+//	{
+//		printf("输入错误");
+//		while (getchar() != '\n')//否则清空缓冲区
+//			continue;
+//	}
+//
+//
+//}
+
+//void test(int (*p)[5])
+//{
+//	printf("%d\n", **p);
+//}
+//
+//int main(void)
+//{
+//	int arr[3][4] = { 0 };
+//	test(arr);
+//	return 0;
+//}
+//void print(int (*p)[5])
+//{
+//	int i = 0;
+//	for (i = 0; i < 3; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j < 5; j++)
+//		{
+//			printf("%d", *(p[i] + j));
+//		}
+//		printf("\n");
+//	}
+//
+//}
+//
+//int main(void)
+//{
+//	int arr[3][5] = { {1,2,3,4,5},{2,3,4,5,6},{3,4,5,6,7} };
+//	print(arr);
+//	return 0;
+//}
+//int main(void)
+//{
+//	int arr1[] = { 1,2,3,4,5 };
+//	int arr2[] = { 2,3,4,5,6 };
+//	int arr3[] = { 3,4,5,6,7 };
+//	int* parr[] = { arr1,arr2,arr3 };
+//	数组指针
+//	int(*p)[] = &arr1;
+//	printf("%d\n", *(*p+2));
+	//for (int i = 0; i < 3; i++)
+	//{
+	//	int j = 0;
+	//	for (j = 0; j < 5; j++)
+	//	{
+	//		printf("%d ", *( *(parr + i) + j ));
+	//	}
+	//	printf("\n");
+	//}
+	//return 0;
+
+//int main(void)
+//{
+//	char* p1 = "abcde";
+//	char* p2 = "abcde";
+//	printf("%p\n", p1);
+//	printf("%p\n", p2);
+//	return 0;
+//}
+//int main(void)
+//{
+//	int i = 0, j = 0, k = 2, m = 0;
+//	if (m = j++ && i++ || k++)
+//		printf("1\n");
+//	return 0;
+//}
+//int main(void)
+//{
+//	int arr[] = { 0,1,2,3,4 };
+//	int p[] = arr;
+//	printf("%d", *p);
+//	return 0;
+//}
+
+////浮点数和整数的区别
+//int main(void)
+//{
+//	int n = 9;
+//	float* p = (float*) &n;
+//	printf("%d\n", n);
+//	printf("%f\n", *p);
+//	printf("%f\n", n);
+//	printf("p==%p\n", p); //p == 006FF794
+//	printf("n==%p\n", &n);//n == 006FF794
+//	return 0;
+//}
 //int main(void)
 //{
 //	char c = -128;
@@ -172,7 +800,7 @@
 //		*(p + left) = *(p + right);
 //		*(p + right) = map;
 //		left++;
-//		right--; 
+//		right--;
 //	}
 //}
 
@@ -242,7 +870,7 @@
 //	printf("%zd", sizeof(i + 1));
 //	printf("%zd", sizeof(!i));
 //	printf("%zd", sizeof(+i));
-//	
+//
 //	return 0;
 //}
 
@@ -276,7 +904,7 @@
 //		arr[left] = map;
 //		i++;
 //	}
-//	
+//
 //
 //}
 //
@@ -384,7 +1012,7 @@
 //		n--;
 //	}
 //	return c;
-//		
+//
 //	int i = 1, j = 1, count = 0,add=0;
 //	if (n > 2)
 //		for (; count < n-2; count++)
@@ -470,7 +1098,7 @@
 //	char arr[] = "bit";
 //	int a = my_strlen(arr);
 //	printf("%d", a);
-//	
+//
 //	return 0;
 //}
 //int is_prime(int n)
@@ -482,7 +1110,7 @@
 //		{
 //			i = 0;
 //	{
-//		i = 1;	
+//		i = 1;
 //	}
 //	return i;
 //}
@@ -516,7 +1144,7 @@
 //	int ret = 0;
 //	int guess = 0;
 //	//拿时间戳来设置随机数的起点
-//	
+//
 //	//时间戳
 //	//当前计算机的时间减去计算机的起始时间--(1970-01-01-00-00-00)==(xxxx)秒
 //	ret = rand() % 100 + 1;
@@ -538,13 +1166,13 @@
 //			break;
 //		}
 //	}
-//	 
+//
 //	//printf("猜数字%d\n",ret);
 //
 //}
 //int main(void)
 //{
-//	
+//
 //	int input = 0;
 //	srand((unsigned int)time(NULL));
 //	do
@@ -563,77 +1191,77 @@
 //				printf("选择错误\n");
 //				break;
 //		}
-//			
+//
 //	} while (input);
-
-	/*int arr[] = { 1,2,3,4,5,6,7,8,9,10,11,12 };//二分查找，有序的数组查找
-	int p = 1;
-	int sz = sizeof(arr) / sizeof(arr[0]);
-	int left = 0;
-	int right = sz-1;
-
-	while (left <= right)
-	{
-		int mid = (left + right) / 2;
-		if (arr[mid] > p)
-		{
-			right = mid - 1;
-		}
-		else if (arr[mid] < p)
-		{
-			left = mid + 1;
-		}
-		else
-		{
-			printf("找到了,下标是%d", mid);
-			break;
-		}
-	}
-	if (left > right)
-	{
-		printf("没找到");
-	}*/
-
-	//for (int i = 1; i < 10; i++)
-	//{
-	//	for (int j = 1; j <= i; j++)
-	//	{
-	//		printf("%d*%d=%-2d ",i,j ,i * j);
-	//	}
-	//	printf("\n");
-	//}
-
-
-	//int arr[] = { 12,32,34,54,65,6,7,87,44,14, };
-	//int mix = arr[0];
-	//int sz = sizeof(arr) / sizeof(arr[0]);
-
-	//	for (int i = 1; i < sz; i++)
-	//	{
-	//		if (mix < arr[i])
-	//		{
-	//			mix = arr[i];
-	//		}
-	//	}
-	//	printf("%d", mix);                 
-
-	//
-
-
-
-
-	/*double sum = .0;
-	double flag = 1.0;
-	for (int i = 1; i <= 100; i++)
-	{
-		sum += flag / i;
-		flag = -flag;
-
-	}
-	printf("%lf", sum);              */
-
-
-
+//
+//	/*int arr[] = { 1,2,3,4,5,6,7,8,9,10,11,12 };//二分查找，有序的数组查找
+//	int p = 1;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int left = 0;
+//	int right = sz-1;
+//
+//	while (left <= right)
+//	{
+//		int mid = (left + right) / 2;
+//		if (arr[mid] > p)
+//		{
+//			right = mid - 1;
+//		}
+//		else if (arr[mid] < p)
+//		{
+//			left = mid + 1;
+//		}
+//		else
+//		{
+//			printf("找到了,下标是%d", mid);
+//			break;
+//		}
+//	}
+//	if (left > right)
+//	{
+//		printf("没找到");
+//	}*/
+//
+//	//for (int i = 1; i < 10; i++)
+//	//{
+//	//	for (int j = 1; j <= i; j++)
+//	//	{
+//	//		printf("%d*%d=%-2d ",i,j ,i * j);
+//	//	}
+//	//	printf("\n");
+//	//}
+//
+//
+//	//int arr[] = { 12,32,34,54,65,6,7,87,44,14, };
+//	//int mix = arr[0];
+//	//int sz = sizeof(arr) / sizeof(arr[0]);
+//
+//	//	for (int i = 1; i < sz; i++)
+//	//	{
+//	//		if (mix < arr[i])
+//	//		{
+//	//			mix = arr[i];
+//	//		}
+//	//	}
+//	//	printf("%d", mix);
+//
+//	//
+//
+//
+//
+//
+//	/*double sum = .0;
+//	double flag = 1.0;
+//	for (int i = 1; i <= 100; i++)
+//	{
+//		sum += flag / i;
+//		flag = -flag;
+//
+//	}
+//	printf("%lf", sum);              */
+//
+//
+//
 	//int count = 0;
 	//for (int i = 9; i <= 100; i++)
 	//{
@@ -689,10 +1317,10 @@
 	////printf("%d", (int)sqrt(2));
 	//*for (int i = 0; i < t; i++)
 	//{
-	//	
+	//
 	//	printf("%d\n", arr[i]);
 	//}*/
-
+//
 //	return 0;
 //}
 //int main()
@@ -726,4 +1354,3 @@
 //	}
 //    return 0;
 //}
- 
